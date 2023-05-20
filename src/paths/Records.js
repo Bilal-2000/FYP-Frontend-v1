@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import useAxiosPrivate from './components/register/hooks/useAxiosPrivate'
 import Cookies from 'universal-cookie';
 import Header from './components/homecomponents/header';
+import "./Records.css"
 const cookies = new Cookies();
 const Records = () => {
     const axiosPrivate = useAxiosPrivate();
@@ -37,8 +38,8 @@ const Records = () => {
                             {results?.map((elem, index) => {
                                 return (
                                     <tr>
-                                        <th scope="row">{index + 1}</th>
-                                        <td>{elem?.prediction_result}</td>
+                                        <th scope="row" class="align-middle">{index + 1}</th>
+                                        <td className='pred' class="align-middle">{elem?.prediction_result}</td>
                                         <td><img src={`http://127.0.0.1:8000${elem?.thumbnail}`} alt='' /></td>
                                     </tr>
                                 )
