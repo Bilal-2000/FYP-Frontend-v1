@@ -59,7 +59,7 @@ const ResetPassword = () => {
                                 <Button type="button" className={errMsg ? "btn-close" : "d-none"} onClick={() => setErrMsg('')}></Button>
                             </div>
                             <div className={showAlert ? "alert alert-success alert-dismissible fade show" : "offscreen"}>
-                                {showAlert && <>Password reset successfully. Please <Link to={"/login"} >
+                                {showAlert && <>Password reset successfully. Please <Link to={"/SignIn"} >
                                     Login
                                 </Link> with new password.</>}
                                 <button type="button" className={showAlert ? "btn-close" : "d-none"} onClick={() => setShowAlert('')}></button>

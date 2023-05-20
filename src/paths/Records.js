@@ -26,20 +26,20 @@ const Records = () => {
             <Header />
             <section id="hero" className="d-flex align-items-center">
                 <div className="container">
-                    <table class="table">
+                    <table class="table table-bordered table-hover" id="record-table">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">name</th>
-                                <th scope="col">image</th>
+                                <th scope="col">ID</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Image</th>
                             </tr>
                         </thead>
                         <tbody>
                             {results?.map((elem, index) => {
                                 return (
                                     <tr>
-                                        <th scope="row" class="align-middle">{index + 1}</th>
-                                        <td className='pred' class="align-middle">{elem?.prediction_result}</td>
+                                        <th scope="row" class="align-middle" id="index">{index + 1}</th>
+                                        <td className='pred' class="align-middle" id="pred-result">{elem?.prediction_result}</td>
                                         <td><img src={`http://127.0.0.1:8000${elem?.thumbnail}`} alt='' /></td>
                                     </tr>
                                 )
