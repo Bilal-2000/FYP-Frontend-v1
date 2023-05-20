@@ -30,10 +30,10 @@ const ForgotPassword = () => {
                 <div className="container">
                     <div className="container-center">
                         <h2 className="text-black">Don't Worry!</h2>
-                        <form action="">
+                        <form action="" style={{backgroundColor: "honeydew"}}>
                             <h4>
                                 Just provide your email<br />
-                                and we can do the rest
+                                and we will do the rest
                             </h4>
                             <div className={errMsg ? "alert alert-danger alert-dismissible fade show" : "offscreen"}>
                                 {errMsg}

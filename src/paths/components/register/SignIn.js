@@ -120,7 +120,6 @@ const SignIn = () => {
                             <div className="form-container sign-up-container">
                                 <form onSubmit={(e) => handleSubmit(e)}>
                                     <h1>Create Account</h1>
-                                    <span>or use your email for registration</span>
                                     <input
                                         type="text"
                                         placeholder="Name"
@@ -152,8 +151,6 @@ const SignIn = () => {
                             <div className="form-container sign-in-container">
                                 <form onSubmit={(e) => handleLogin(e)}>
                                     <h1>Sign in</h1>
-
-                                    <span>or use your account</span>
                                     <input
                                         type="email"
                                         placeholder="Email"
@@ -176,13 +173,13 @@ const SignIn = () => {
                             <div className="overlay-container">
                                 <div className="overlay">
                                     <div className="overlay-panel overlay-left">
-                                        <h1>Welcome Back!</h1>
-                                        <p>To keep connected with us please login with your personal info</p>
+                                        <h1>Already have a account?</h1>
+                                        <p>To keep using this website please login with your personal info</p>
                                         <button className="ghost" id="signIn" onClick={() => setLogin(true)}>Sign In</button>
                                     </div>
                                     <div className="overlay-panel overlay-right">
-                                        <h1>Hello, Friend!</h1>
-                                        <p>Enter your personal details and start journey with us</p>
+                                        <h1>New Here?</h1>
+                                        <p>Don't Worry! Enter your personal details and start journey with us</p>
                                         <button className="ghost" id="signUp" onClick={() => setLogin(false)}>Sign Up</button>
                                     </div>
                                 </div>

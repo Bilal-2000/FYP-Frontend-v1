@@ -5,11 +5,13 @@ import axios from '../api/axios';
 import Cookies from 'universal-cookie';
 import { useNavigate } from 'react-router-dom';
 import useAxiosPrivate from './components/register/hooks/useAxiosPrivate';
+import "./Upload.css"
 const cookies = new Cookies()
 const Upload = () => {
     const [image, setImage] = useState();
     const [loader, setLoader] = useState(false)
     const [text, setText] = useState('');
+    const [Confidence, setConfidence] = useState('')
     const axiosPrivate = useAxiosPrivate();
     const navigate = useNavigate();
     const HandleUpload = () => {
@@ -28,7 +30,8 @@ const Upload = () => {
         ).then(res => {
             console.log(res.data, 'data')
             setLoader(false)
-            setText(res.data[0])
+            setText(res.data.Prediction)
+            setConfidence(res.data.Confidence)
         }).catch(err => {
             setLoader(false)
             if (err.response.status === 400) {
@@ -44,7 +47,7 @@ const Upload = () => {
             <Header />
             <div className="centered-container">
                 <div className="centered-content">
-                    <h1 className='mb-2'>upload here</h1>
+                    <h1 className='mb-2'>Upload here</h1>
                     <div className="mb-3">
                         <input id="file-input4" type="file" className="form-control"
                             onChange={(event) => {
@@ -52,7 +55,8 @@ const Upload = () => {
                             }} />
                     </div>
                     <button onClick={HandleUpload} className='modal__button'>Upload</button>
-                    {text && <p>{text}</p>}
+                    {text && <p id ="prediction">{text}</p>}
+                    {Confidence && <p id="confidence">Confidence : {Confidence}</p>}
                 </div>
 
             </div>
